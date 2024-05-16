@@ -1,5 +1,17 @@
 def remove_duplicates(array):
-    return 0
+    if not array:
+        return 0
+    
+    unique_num = set()
+
+    i = 0
+    for num in array:
+        if num not in unique_num:
+            unique_num.add(num)
+            array[i] = num
+            i += 1
+
+    return i
 
 if __name__ == "__main__":
     print(remove_duplicates([2, 3, 3, 3, 6, 9, 9]))  # 4
